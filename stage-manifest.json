@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "release": "door-tree-v2",
+  "release": "door-tree-v4",
   "regions": 696,
   "palette": 30,
   "width": 1254,
@@ -8,6 +8,7 @@
   "assets": {
     "source.png": "ff696ec6bc1897d3bdf5f4416a4cecc1bcf7f0bdc7bb9371cf14dd30a14bab7a",
     "guide.png": "7f30620f3c2a5f6e560159951434574751e5434af7ae86ee8ca3101623a58bf6",
-    "level.json": "7616619bb0595a6ebd3a05ace945bab06b90b515a0597119475dce4147553916"
-  }
+    "level.json": "66a1ce76669772bd3c22a8ee402bb4a9fa3b447273114c501b81abc2b347ddc5"
+  },
+  "cells": 700
 }
