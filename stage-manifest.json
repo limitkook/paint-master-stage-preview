@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "release": "door-tree-v4",
+  "release": "balanced-v5",
   "regions": 696,
   "palette": 30,
   "width": 1254,
   "height": 1254,
   "assets": {
-    "source.png": "ff696ec6bc1897d3bdf5f4416a4cecc1bcf7f0bdc7bb9371cf14dd30a14bab7a",
-    "guide.png": "7f30620f3c2a5f6e560159951434574751e5434af7ae86ee8ca3101623a58bf6",
-    "level.json": "66a1ce76669772bd3c22a8ee402bb4a9fa3b447273114c501b81abc2b347ddc5"
+    "source.png": "768b4aa5aaf660ada14b11453a98cc2f49a5acb767b313b20057cc980cc5ac71",
+    "guide.png": "ae7f0d5c19dd6c59ba6b01c79d225807c68483a3d00539c5ad1d66f9fbd8e205",
+    "level.json": "a658d9b3929d53b52717fc3ff4769a3aba498159700275636e5a0fd6ac86b33e"
   },
-  "cells": 700
+  "cells": 667
 }
