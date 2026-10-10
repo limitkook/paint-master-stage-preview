@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "release": "material-v16-boundary-attic",
+  "release": "material-v18-confined-pointer",
   "regions": 1106,
   "cells": 1106,
   "palette": 27,
@@ -14,7 +14,7 @@
   },
   "uniqueRGB": 765,
   "colourLimit": 30,
-  "completionThreshold": 0.95,
+  "completionThreshold": 0.97,
   "completionMode": "automatic-while-held",
   "partialReleaseLabel": "remaining-owner-clearance",
   "geometryMasterUniqueRGB": 27,
@@ -29,7 +29,6 @@
   },
   "tinyRemainderPixels": 24,
   "tinyMinimumCoverage": 0.8,
-  "boundaryToleranceBrushRadii": 1,
   "completionAudio": "two-note-bell-only",
   "atticWindow": {
     "author": "Hermes Agent",
@@ -53,5 +52,15 @@
       "level.json": "25e121fb4ca91f2df89957bb199e790565c9c436bde3420b442ac998955bbfef"
     },
     "date": "2026-10-11"
-  }
+  },
+  "testStage": 1,
+  "virtualPointerMode": "swept-owner-collision-with-axis-slide",
+  "boundaryError": false,
+  "brushSizeMultipliers": [
+    0.5,
+    1,
+    2
+  ],
+  "defaultBrushMultiplier": 1,
+  "allNumbersZoomFraction": 0.7
 }
