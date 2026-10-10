@@ -14,6 +14,6 @@ export class Stage {
  paintCell(index){const id=this.strokeOwner;if(!id||this.owners[index]!==id||this.painted[index])return false;this.painted[index]=1;this.coverage[id]++;this.paintedCount++;this.changes.push(index);return true;}
  circle(x,y,radius){if(!this.strokeOwner)return;const w=this.width,h=this.height,r2=radius*radius;for(let yy=Math.max(0,Math.floor(y-radius));yy<Math.min(h,Math.ceil(y+radius));yy++)for(let xx=Math.max(0,Math.floor(x-radius));xx<Math.min(w,Math.ceil(x+radius));xx++)if((xx+.5-x)**2+(yy+.5-y)**2<=r2)this.paintCell(yy*w+xx);}
  segment(a,b,radius){const steps=Math.max(1,Math.ceil(Math.hypot(b.x-a.x,b.y-a.y)/Math.max(1,radius/2)));for(let i=0;i<=steps;i++)this.circle(a.x+(b.x-a.x)*i/steps,a.y+(b.y-a.y)*i/steps,radius);}
- endStroke(cancel=false){const id=this.strokeOwner;this.strokeOwner=0;if(!id||cancel||this.coverage[id]/this.regions[id-1].area<.9)return 0;this.strokeOwner=id;for(const [start,n] of this.runs[id])for(let i=start;i<start+n;i++)this.paintCell(i);this.strokeOwner=0;this.done[id]=1;this.doneCount++;return id;}
+ endStroke(cancel=false){const id=this.strokeOwner;this.strokeOwner=0;if(!id||cancel||this.coverage[id]/this.regions[id-1].area<.98)return 0;this.strokeOwner=id;for(const [start,n] of this.runs[id])for(let i=start;i<start+n;i++)this.paintCell(i);this.strokeOwner=0;this.done[id]=1;this.doneCount++;return id;}
  drainChanges(){const changes=this.changes;this.changes=[];return changes;}
 }
