@@ -1,17 +1,25 @@
 {
   "schemaVersion": 1,
-  "release": "exact30-v10-hud",
+  "release": "material-v11-fixed-contours",
   "regions": 1102,
   "cells": 1102,
   "palette": 27,
   "width": 1254,
   "height": 1254,
   "assets": {
-    "source.png": "1445e7207dc9c16de96c68f3a42daabfb66f5283249ce624a05417aebde8acc9",
+    "source.png": "f9be9d90f7e95464a2bf732f47c187e9e7c97b937bda1095c33364675ea4442a",
     "guide.png": "429fa44af389567890d87c6a41266c9cc0eb4de28828adfdf39d57ee8e8b2ff8",
-    "level.json": "5719c404937b6b064334033024d836f073ea342a90383e532ec334bf36f7a912"
+    "level.json": "5719c404937b6b064334033024d836f073ea342a90383e532ec334bf36f7a912",
+    "geometry-base.png": "1445e7207dc9c16de96c68f3a42daabfb66f5283249ce624a05417aebde8acc9"
   },
-  "uniqueRGB": 27,
+  "uniqueRGB": 625,
   "colourLimit": 30,
-  "completionThreshold": 0.98
+  "completionThreshold": 0.98,
+  "geometryMasterUniqueRGB": 27,
+  "revealDetail": {
+    "boundaryChangedPixels": 0,
+    "colourFaceMismatchPixels": 0,
+    "maximumRGBDelta": 14,
+    "canonicalGeometrySource": "geometry-base.png"
+  }
 }
