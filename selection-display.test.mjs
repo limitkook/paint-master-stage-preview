@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 const app=readFileSync(new URL('./app.mjs',import.meta.url),'utf8');
-const start=app.indexOf('const badges=[];');
+const start=app.indexOf(' for(let i=0;i<stage.regions.length;i++){const r=stage.regions[i];');
 const end=app.indexOf('\n ctx.restore();',start);
 assert.ok(start>=0&&end>start,'actual canvas label renderer exists');
 function render(selected,pickedOwner=0,hintedOwner=0){
@@ -12,6 +12,22 @@ function render(selected,pickedOwner=0,hintedOwner=0){
  vm.runInNewContext(app.slice(start,end),env);
  return commands;
 }
+
+test('tapping a wrong-number face adds no popup or clicked-owner badge',()=>{
+ const begin=app.slice(app.indexOf('function begin(p)'),app.indexOf('canvas.addEventListener',app.indexOf('function begin(p)')));
+ const announcements=[],env={hintMotion:null,hintedOwner:0,pickedOwner:0,pickedUntil:0,lastOwner:0,dirty:false,selected:1,indexAt:()=>0,sourcePoint:p=>p,stage:{owners:[1],regions:[{paletteNumber:2}],beginCell:()=>false},toast:m=>announcements.push(m)};
+ vm.runInNewContext(begin+';begin({x:0,y:0});',env);
+ assert.deepEqual(announcements,[]);assert.equal(env.lastOwner,0);assert.equal(env.pickedOwner,0);
+});
+test('clicking a face cannot add colored number badges',()=>{
+ assert.deepEqual(render(1,1),render(1));
+});
+test('explicit hints retain only plain numbers without colored badges or overlays',()=>{
+ const commands=render(1,0,1);assert.ok(commands.some(c=>c[0]==='number'));
+ assert.ok(commands.every(c=>c[0]!=='rectangle'&&(c[0]!=='number'||c[1]==='#151a1c')));
+ assert.doesNotMatch(app,/ctx\.drawImage\(hintCanvas/);
+});
+
 test('choosing a palette number cannot add different coloured board numbers',()=>{
  assert.deepEqual(render(1),render(2));
 });
