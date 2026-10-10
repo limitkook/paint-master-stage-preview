@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "release": "balanced-v5",
-  "regions": 696,
+  "release": "structural-v6",
+  "regions": 338,
+  "cells": 338,
   "palette": 30,
   "width": 1254,
   "height": 1254,
   "assets": {
     "source.png": "768b4aa5aaf660ada14b11453a98cc2f49a5acb767b313b20057cc980cc5ac71",
-    "guide.png": "ae7f0d5c19dd6c59ba6b01c79d225807c68483a3d00539c5ad1d66f9fbd8e205",
-    "level.json": "a658d9b3929d53b52717fc3ff4769a3aba498159700275636e5a0fd6ac86b33e"
-  },
-  "cells": 667
+    "guide.png": "1ed450ce71fe0e988b99deb1a407ec45709b68e33a3213cea916420b0868e842",
+    "level.json": "55fbe77e73de2f869cd17f9ebddca432c22a5949d7b5b9a4b6c9dc622dd3ba30"
+  }
 }
