@@ -7,3 +7,6 @@
 /* Reserve a real top HUD lane: statistics must not cover the paintable picture. */
 main{padding-top:132px}
 @media(max-height:520px){main{padding-top:108px}#painting-hud{padding:8px 12px;top:3px}#region-hud{margin-top:6px}.hud-colour{margin-top:5px}}
+/* Persistent, non-blocking all-owner completion notice. */
+#clear-banner{position:absolute;left:50%;top:calc(50% + 66px);transform:translate(-50%,-50%);z-index:6;max-width:90%;padding:20px 38px;border:1px solid #ffeaa970;border-radius:20px;background:#15242dee;color:#ffeaa9;box-shadow:0 12px 40px #0005;font-size:36px;font-weight:800;letter-spacing:2px;white-space:nowrap;pointer-events:none}
+@media(max-height:520px){#clear-banner{top:calc(50% + 54px);padding:14px 30px;font-size:30px}}

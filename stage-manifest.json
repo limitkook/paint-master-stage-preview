@@ -1,25 +1,28 @@
 {
   "schemaVersion": 1,
-  "release": "material-v12-neutral-selection",
+  "release": "material-v13-flower-clear",
   "regions": 1102,
   "cells": 1102,
   "palette": 27,
   "width": 1254,
   "height": 1254,
   "assets": {
-    "source.png": "f9be9d90f7e95464a2bf732f47c187e9e7c97b937bda1095c33364675ea4442a",
+    "source.png": "a4a98038a285dd5e93954e1fba2d311b1af4930efe184198c36eef115c225af9",
     "guide.png": "429fa44af389567890d87c6a41266c9cc0eb4de28828adfdf39d57ee8e8b2ff8",
     "level.json": "5719c404937b6b064334033024d836f073ea342a90383e532ec334bf36f7a912",
     "geometry-base.png": "1445e7207dc9c16de96c68f3a42daabfb66f5283249ce624a05417aebde8acc9"
   },
-  "uniqueRGB": 625,
+  "uniqueRGB": 765,
   "colourLimit": 30,
   "completionThreshold": 0.98,
   "geometryMasterUniqueRGB": 27,
   "revealDetail": {
     "boundaryChangedPixels": 0,
     "colourFaceMismatchPixels": 0,
-    "maximumRGBDelta": 14,
-    "canonicalGeometrySource": "geometry-base.png"
+    "maximumRGBDelta": 20,
+    "canonicalGeometrySource": "geometry-base.png",
+    "flowerAuthor": "Hermes Agent",
+    "flowerApprovalDate": "2026-10-11",
+    "flowerReason": "User approved stronger white/red petal relief; no new faces or contours"
   }
 }
