@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "release": "material-v15-current-audio",
-  "regions": 1102,
-  "cells": 1102,
+  "release": "material-v16-boundary-attic",
+  "regions": 1106,
+  "cells": 1106,
   "palette": 27,
   "width": 1254,
   "height": 1254,
   "assets": {
-    "source.png": "a4a98038a285dd5e93954e1fba2d311b1af4930efe184198c36eef115c225af9",
-    "guide.png": "429fa44af389567890d87c6a41266c9cc0eb4de28828adfdf39d57ee8e8b2ff8",
-    "level.json": "5719c404937b6b064334033024d836f073ea342a90383e532ec334bf36f7a912",
-    "geometry-base.png": "1445e7207dc9c16de96c68f3a42daabfb66f5283249ce624a05417aebde8acc9"
+    "source.png": "8db11ac8de112a4974840ea7170f1371328a4541f48d08e925954a56d9311f28",
+    "geometry-base.png": "f17e7dffdf5b5fe833e3e8921db349326635d30ab1035fad2dfedd85c1ed3643",
+    "guide.png": "e66d4f847e245c4285f4db908eac316a6b4dde320d3ff2fbc6e21b8fcf2d21ee",
+    "level.json": "25e121fb4ca91f2df89957bb199e790565c9c436bde3420b442ac998955bbfef"
   },
   "uniqueRGB": 765,
   "colourLimit": 30,
@@ -26,5 +26,32 @@
     "flowerAuthor": "Hermes Agent",
     "flowerApprovalDate": "2026-10-11",
     "flowerReason": "User approved stronger white/red petal relief; no new faces or contours"
+  },
+  "tinyRemainderPixels": 24,
+  "tinyMinimumCoverage": 0.8,
+  "boundaryToleranceBrushRadii": 1,
+  "completionAudio": "two-note-bell-only",
+  "atticWindow": {
+    "author": "Hermes Agent",
+    "reason": "User approved local attic frame/glass/sill/ownership correction",
+    "roi": [
+      995,
+      495,
+      1030,
+      545
+    ],
+    "regions": 1106,
+    "palette": 27,
+    "outsideROIBaseChanged": 0,
+    "outsideROIRevealChanged": 0,
+    "outsideROIOwnershipChanged": 0,
+    "newGlassOwners": 4,
+    "assets": {
+      "source.png": "8db11ac8de112a4974840ea7170f1371328a4541f48d08e925954a56d9311f28",
+      "geometry-base.png": "f17e7dffdf5b5fe833e3e8921db349326635d30ab1035fad2dfedd85c1ed3643",
+      "guide.png": "e66d4f847e245c4285f4db908eac316a6b4dde320d3ff2fbc6e21b8fcf2d21ee",
+      "level.json": "25e121fb4ca91f2df89957bb199e790565c9c436bde3420b442ac998955bbfef"
+    },
+    "date": "2026-10-11"
   }
 }

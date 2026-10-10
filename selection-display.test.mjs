@@ -13,11 +13,11 @@ function render(selected,pickedOwner=0,hintedOwner=0){
  return commands;
 }
 
-test('tapping a wrong-number face adds no popup or clicked-owner badge',()=>{
+test('wrong-number face requests only the error feedback, not an answer or clicked-owner badge',()=>{
  const begin=app.slice(app.indexOf('function begin(p)'),app.indexOf('canvas.addEventListener',app.indexOf('function begin(p)')));
- const announcements=[],env={hintMotion:null,hintedOwner:0,pickedOwner:0,pickedUntil:0,lastOwner:0,dirty:false,selected:1,indexAt:()=>0,sourcePoint:p=>p,stage:{owners:[1],regions:[{paletteNumber:2}],beginCell:()=>false},toast:m=>announcements.push(m)};
+ const announcements=[],env={hintMotion:null,hintedOwner:0,pickedOwner:0,pickedUntil:0,lastOwner:0,dirty:false,selected:1,indexAt:()=>0,sourcePoint:p=>p,stage:{owners:[1],regions:[{paletteNumber:2}],beginCell:()=>false},consumeCompletions:()=>announcements.push("errorFeedback"),toast:m=>announcements.push(m)};
  vm.runInNewContext(begin+';begin({x:0,y:0});',env);
- assert.deepEqual(announcements,[]);assert.equal(env.lastOwner,0);assert.equal(env.pickedOwner,0);
+ assert.deepEqual(announcements,["errorFeedback"]);assert.equal(env.lastOwner,0);assert.equal(env.pickedOwner,0);
 });
 test('clicking a face cannot add colored number badges',()=>{
  assert.deepEqual(render(1,1),render(1));
