@@ -86,3 +86,18 @@ npm test
 이 환경의 추가 historical fixture 및 Python art 검사 경로는 repo 이력/Tests에서 확인. scratch 절대 경로를 다른 PC의 정본 경로로 가정하지 않는다.
 
 Unity 로컬 확인: Play 종료 → GitHub Desktop Fetch/Pull → compile 대기 → Unity Editor ‘Paint Master → Open Native Preview’ → Play → Game. APK 빌드는 필요 없다.
+
+## 6. 반려동물 쉬운 스테이지 후보와 재현 수치
+
+- 상태: 사용자 미승인 별도 시안. 기본 저택 웹/Unity 자산은 교체하지 않음.
+- 실제 결과:1254×1254, 기본 원화의 실제 RGB15종=사용한 팔레트15개, 독립 연결 칸78개. 전경·풍경 배경을 모두 색칠 가능으로 준비했다.
+- 참고 사진2장은 private `pets-easy-stage/references/`에 보존. 공개 repo와 배포 HTML에 실제 참고 사진은 포함하지 않았다.
+- 최초 시안v1은 사진 기반 원화, v2는 넓은 잎·수피·풀·풍경 색면으로 단순화한 별도 시안. 생성 프롬프트/결과 JSON과 원본 PNG를 보존했다. 이미지 생성 로그의 실제 품질/모델 응답을 그대로 기록하며 프롬프트만으로 품질 등급이나 색 수를 단정하지 않는다.
+-15색 후보 팔레트: `634431 9d6842 d99b5f 3d6541 6e8936 becf43 65b4f3 4184b0 fcf3e7 dfd1c3 59565d 93898a 292323 dc758b f7be43`.
+- 파생 기본색 master는 v2에 median3 전처리→정수 안전 RGB 최근접 팔레트→4-connected edge-adjacent 작은 조각 정리 순서다. 일반 최소 면적1400원본픽셀, 보호 기능 최소 면적4원본픽셀. 의미 있는 눈 반사점·고양이 눈·분홍 혀·꽃 중심은 새 그림의 실제 ROI에서 보호한다. 다른 사진에서 해당 ROI 좌표를 그대로 재사용하지 않는다.
+- 도구의 기존 보호 기본값24는 유지하고, 새 후보만 `prepare(..., minimum_protected_area=4)`를 명시한다. `Tests/test_exact_color_feature_protection.py`에서4픽셀 눈 반사점 보호와 기존 기본값을 회귀 확인한다.
+- 정확한 최종 master에서 ownership/guide/번호를 함께 생성했다.15색 요청과 실제78칸 결과를 구분하며78은 사용자가 지정한 수치가 아니다.
+- private 실물 파일: `PaintMaster-Pets-Easy-Preview.html`. 다운로드 후 Chrome/Edge에서 파일을 열면 된다. JS/PNG/level이 들어있는 단독 HTML이며 서버·설치·네트워크 호출 없이 실행한다.
+- 실제 `file:` 브라우저에서15색/78칸, 일반 마우스 입력2342픽셀, 렌더 alpha mismatch0, QA 미사용, HTTP 자산 요청0을 확인했다. 전체78칸 정상 입력 완주·실제 휴대폰·Unity Play를 확인한 것은 아니다.
+- 이 시안의 reveal은15색 기본 원화다. 기존 저택의 재질 reveal과 같다고 주장하지 않는다. 풍부한 소재/내부선은 승인한 스타일에 맞춰 frozen owner 내부에만 별도 reveal로 추가하는 다음 미술 단계다.
+- 원본 사진→v1→v2→정확15색 master→78칸 level/guide→단독 HTML 및 브라우저 보고서를 각각 보존. 원본·재질시안·게임 원화를 구분한다.
