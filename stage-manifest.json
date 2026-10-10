@@ -1,14 +1,16 @@
 {
   "schemaVersion": 1,
-  "release": "flat-v8-controls",
-  "regions": 596,
-  "cells": 596,
-  "palette": 30,
+  "release": "exact30-v9",
+  "regions": 955,
+  "cells": 955,
+  "palette": 27,
   "width": 1254,
   "height": 1254,
   "assets": {
-    "source.png": "aa1c070194e3708c91efb37175df3cb5e17da2230a1a9166c2ad287504511df0",
-    "guide.png": "a7f51fe9a5e4994c53308f45a0522c63f185b40e28cd65c3b433b9fbab0035b3",
-    "level.json": "5be5d4916f29fb7bbbe4e43d722b3bed76385457433a9368e92cf1ece62b0bb5"
-  }
+    "source.png": "ccf1eedff0209ef31aeb8f2df442c37952cb1ad9281f503fb1aa7a4e160df2e2",
+    "guide.png": "6b0b82982218ecca1ddc8a160a1fcacf8e7f890ea6022497e5b21b702eecbd37",
+    "level.json": "f2242533831d8539d7a815c5330e5bb0129b275b56d8c7fbbc7e6562eaf3f9ab"
+  },
+  "uniqueRGB": 27,
+  "colourLimit": 30
 }
