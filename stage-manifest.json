@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "release": "material-v14-silent-board",
+  "release": "material-v15-current-audio",
   "regions": 1102,
   "cells": 1102,
   "palette": 27,
@@ -14,7 +14,9 @@
   },
   "uniqueRGB": 765,
   "colourLimit": 30,
-  "completionThreshold": 0.98,
+  "completionThreshold": 0.95,
+  "completionMode": "automatic-while-held",
+  "partialReleaseLabel": "remaining-owner-clearance",
   "geometryMasterUniqueRGB": 27,
   "revealDetail": {
     "boundaryChangedPixels": 0,

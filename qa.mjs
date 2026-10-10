@@ -23,4 +23,4 @@ export function debugPaint(stage,mode,owner=1,fraction=1){
  }else throw Error('QA action invalid');
  stage.changes=[];stage.debugUsed=true;
 }
-export function qaReport(stage,manifest,lastOwner=0){return {kind:'QA state — not normal input acceptance',debugUsed:Boolean(stage.debugUsed),release:manifest.release,assetHashes:manifest.assets,completionThreshold:.98,regions:stage.regions.length,done:stage.doneCount,painted:stage.paintedCount,total:stage.total,lastOwner,regionCoverage:lastOwner?stage.coverage[lastOwner]/stage.regions[lastOwner-1].area:0};}
+export function qaReport(stage,manifest,lastOwner=0){return {kind:'QA state — not normal input acceptance',debugUsed:Boolean(stage.debugUsed),release:manifest.release,assetHashes:manifest.assets,completionThreshold:.95,regions:stage.regions.length,done:stage.doneCount,painted:stage.paintedCount,total:stage.total,lastOwner,regionCoverage:lastOwner?stage.coverage[lastOwner]/stage.regions[lastOwner-1].area:0};}

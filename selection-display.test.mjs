@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 const app=readFileSync(new URL('./app.mjs',import.meta.url),'utf8');
-const start=app.indexOf(' for(let i=0;i<stage.regions.length;i++){const r=stage.regions[i];');
+const start=app.indexOf(' for(let i=0;i<stage.regions.length;i++){const r=stage.labelPosition?.(i+1)||stage.regions[i];');
 const end=app.indexOf('\n ctx.restore();',start);
 assert.ok(start>=0&&end>start,'actual canvas label renderer exists');
 function render(selected,pickedOwner=0,hintedOwner=0){

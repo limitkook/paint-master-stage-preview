@@ -4,13 +4,11 @@ import {readFileSync} from 'node:fs';
 import {Stage} from './model.mjs';
 import {progressSummary} from './hud.mjs';
 const level={width:100,height:2,palette:[{number:1,color:'#aa4444'}],regions:[{id:'a',paletteNumber:1,area:100},{id:'b',paletteNumber:1,area:100}],ownerRuns:[1,100,2,100]};
-test('clear waits for every owner release, remains visible, and disappears after reset',()=>{
+test('clear waits for every owner95% snap, then persists and reset hides it',()=>{
  const s=new Stage(level),clear=()=>progressSummary(s,1).stageCleared;
- assert.equal(clear(),false);
- assert.equal(s.beginCell(0,1),true);for(let i=0;i<98;i++)s.paintCell(i);assert.equal(clear(),false);assert.equal(s.endStroke(),1);assert.equal(clear(),false);
- assert.equal(s.beginCell(100,1),true);for(let i=100;i<200;i++)s.paintCell(i);assert.equal(s.paintedCount,s.total);assert.equal(clear(),false,'100% painted while held is not clear');
- assert.equal(s.endStroke(true),0);assert.equal(clear(),false,'cancel cannot clear');
- assert.equal(s.beginCell(100,1),true);assert.equal(s.endStroke(),2);assert.equal(clear(),true);assert.equal(clear(),true);
+ assert.equal(clear(),false);s.beginCell(0,1);for(let i=0;i<95;i++)s.paintCell(i);assert.equal(s.doneCount,1);assert.equal(clear(),false);s.endStroke();
+ s.beginCell(100,1);for(let i=100;i<194;i++)s.paintCell(i);assert.equal(clear(),false);s.endStroke(true);assert.equal(clear(),false,'cancel below95% cannot clear');
+ s.beginCell(194,1);s.paintCell(194);assert.equal(clear(),true,'last face95% clears while still held');assert.equal(s.endStroke(),0);assert.equal(clear(),true);
  s.reset();assert.equal(clear(),false);
 });
 test('web clear status is bound to completion, not rounded area',()=>{
